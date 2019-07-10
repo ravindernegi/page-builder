@@ -7,7 +7,7 @@ class PopupWidget extends Component {
   }
 
   render() {
-    return <React.Fragment>PopupWidget</React.Fragment>;
+    return <React.Fragment><h1>PopupWidget</h1></React.Fragment>;
   }
 }
 
