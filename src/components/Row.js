@@ -1,14 +1,4 @@
-import React, { Component } from "react";
-
-class Row extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  render() {
-    return <React.Fragment>{this.props.rel}</React.Fragment>;
-  }
+function Row(props) {
+  return <h1>Row</h1>;
 }
-
-export default Row;
+export default  Col;
