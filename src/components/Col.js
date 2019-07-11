@@ -1,14 +1,4 @@
-import React, { Component } from "react";
-
-class Col extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  render() {
-    return <React.Fragment>COl</React.Fragment>;
-  }
+function Col(props) {
+  return <h1>Col</h1>;
 }
-
-export default Col;
+export default  Col;
