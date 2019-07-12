@@ -1,6 +1,6 @@
-export default PopupWidget;
+import React from 'react';
 
-function PopupWidget(props) {
+export default function PopupWidget(props) {
   return <h1>PopupWidget</h1>;
 }
-export default  PopupWidget;
+  ;

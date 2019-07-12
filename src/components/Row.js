@@ -1,4 +1,4 @@
-function Row(props) {
+import React from 'react';
+export default function Row(props) {
   return <h1>Row</h1>;
 }
-export default  Col;

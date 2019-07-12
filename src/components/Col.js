@@ -1,4 +1,5 @@
-function Col(props) {
-  return <h1>Col</h1>;
+import React from 'react';
+
+export default function Col(props) {
+  return (<h1>Col</h1>);
 }
-export default  Col;

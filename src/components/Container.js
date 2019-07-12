@@ -14,7 +14,7 @@ class Container extends Component {
   render() {
     return (
       <React.Fragment>
-        {this.state.popup == true && <PopupWidget />}
+        {this.state.popup === true && <PopupWidget />}
 
         <button onclick={this.openComponents}>Add</button>
         <div className="editer-box" />
