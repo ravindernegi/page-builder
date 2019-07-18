@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { PopupWidget } from "./index";
 import Button from "@material-ui/core/Button";
-import Icon from "@material-ui/icons/Icon";
+import Icon from '@material-ui/core/Icon';
 import { withStyles } from '@material-ui/core/styles';
 class Container extends Component {
   constructor() {
@@ -19,8 +19,8 @@ class Container extends Component {
       <React.Fragment>
         {this.state.popup === true && <PopupWidget />}
 
-        <Button onclick={this.openComponents}>
-          <Icon className={classes.icon} color="secondary">
+        <Button variant="contained" onclick={this.openComponents} color="primary">
+          <Icon className={classes.icon}>
           add_circle
           </Icon>
         </Button>
@@ -36,14 +36,9 @@ const useStyles = theme => ({
     alignItems: 'flex-end',
   },
   icon: {
-    margin: theme.spacing(2),
-  },
-  iconHover: {
-    margin: theme.spacing(2),
-    '&:hover': {
-      color: red[800],
-    },
-  },
+    margin: theme.spacing(0),
+  }
+  
 });
 
 export default withStyles(useStyles)(Container);
