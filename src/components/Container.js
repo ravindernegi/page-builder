@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { PopupWidget } from "./index";
-import Button from "@material-ui/core/Button";
-import Icon from '@material-ui/core/Icon';
 import { withStyles } from '@material-ui/core/styles';
 class Container extends Component {
   constructor() {
@@ -17,13 +15,9 @@ class Container extends Component {
     const { classes } = this.props;
     return (
       <React.Fragment>
-        {this.state.popup === true && <PopupWidget />}
+        <PopupWidget />
 
-        <Button variant="contained" onclick={this.openComponents} color="primary">
-          <Icon className={classes.icon}>
-          add_circle
-          </Icon>
-        </Button>
+        
         <div className="editer-box" />
       </React.Fragment>
     );
