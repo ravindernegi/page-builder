@@ -12,7 +12,7 @@ class Container extends Component {
     this.setState({ popup: true });
   }
   render() {
-    const { classes } = this.props;
+    
     return (
       <React.Fragment>
         <PopupWidget />
