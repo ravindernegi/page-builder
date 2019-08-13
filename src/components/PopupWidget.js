@@ -9,70 +9,83 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 class PopupWidget extends Component {
-	constructor() {
-	  super();
-	  this.state = { popup: false };
-	  this.openComponents = this.openComponents.bind(this);
-	  this.closeComponents = this.closeComponents.bind(this);
+	constructor(props) {
+		super(props);
+		this.state = { popup: false };
+		this.openComponents = this.openComponents.bind(this);
+		this.closeComponents = this.closeComponents.bind(this);
 	}
-  
+
 	openComponents() {
-	  this.setState({ popup: true });
+		this.setState({ popup: true });
 	}
 
 	closeComponents() {
 		this.setState({ popup: false });
-	  }
+	}
 	render() {
-	  const { classes } = this.props;
+		const { classes } = this.props;
 
 
-  return (
-    <div>
-	<Button variant="contained"  onClick={this.openComponents} color="primary">
-          <Icon className={classes.icon}>
-          add_circle
+		return (
+			<div>
+				<Button variant="contained" onClick={this.openComponents} color="primary">
+					<Icon className={classes.icon}>
+						add_circle
+          			</Icon>
+				</Button>
+
+				<Dialog
+					open={this.state.popup}
+					onClose={this.closeComponents}
+					aria-labelledby="alert-dialog-title"
+					aria-describedby="alert-dialog-description"
+				>
+					<DialogTitle id="alert-dialog-title">Components</DialogTitle>
+					<DialogContent>
+						<DialogContentText id="alert-dialog-description">
+							<Grid item xs={8}>
+								<Button onClick={()=>this.props.setComponents('grid','grid')} color="primary" variant="contained" className={classes.button_space}>
+									<Icon className={classes.icon}>grid_circle</Icon>
+								</Button>
+								<Button onClick={()=>this.props.setComponents('col','col')} color="primary" variant="contained" className={classes.button_space}>
+									<Icon className={classes.icon}>cancel_circle</Icon>
+								</Button>
+								<Button onClick={()=>this.props.setComponents('image','image')} color="primary" variant="contained" className={classes.button_space}>
+									<Icon className={classes.icon}>cancel_circle</Icon>
+								</Button>
+								<Button onClick={()=>this.props.setComponents('list','list')} color="primary" variant="contained" className={classes.button_space}>
+									<Icon className={classes.icon}>cancel_circle</Icon>
+								</Button>
+							</Grid>
+						</DialogContentText>
+					</DialogContent>
+					<DialogActions>
+						<Button onClick={this.closeComponents} color="primary" variant="contained">
+							<Icon className={classes.icon}>
+								cancel_circle
           </Icon>
-        </Button>
-      
-      <Dialog
-        open={this.state.popup}
-        onClose={this.closeComponents}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">Components</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            <Grid item xs={8}>
-              
-            </Grid>
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={this.closeComponents} color="primary" variant="contained">
-		 	 <Icon className={classes.icon}>
-          		cancel_circle
-          </Icon>
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </div>
-  );
-}
+						</Button>
+					</DialogActions>
+				</Dialog>
+			</div>
+		);
+	}
 }
 
 const useStyles = theme => ({
 	root: {
-	  display: 'flex',
-	  justifyContent: 'center',
-	  alignItems: 'flex-end',
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'flex-end',
 	},
 	icon: {
-	  margin: theme.spacing(0),
+		margin: theme.spacing(0),
+	},
+	button_space : {
+		margin: theme.spacing(1),
 	}
-	
-  });
-  
-  export default withStyles(useStyles)(PopupWidget);
-  
+
+});
+
+export default withStyles(useStyles)(PopupWidget);
