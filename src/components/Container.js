@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { PopupWidget } from "./index";
 import { withStyles } from '@material-ui/core/styles';
+import { Image, Grid } from "./elements/index";
 class Container extends Component {
 	constructor() {
 		super();
@@ -23,7 +24,13 @@ class Container extends Component {
 		console.log(this.state.components.items);
 		
 		return this.state.components.items.map((val,index) => {
-			return (<div key={index}>{val.name}</div>)
+			if(val.name=='image'){
+				return (<Image/>);
+			}
+			if(val.name=='grid'){
+				return (<Grid/>);
+			}
+			
 		})
 		//return JSON.stringify(this.state);
 	}
